@@ -64,6 +64,12 @@ public class CardTrick {
         //Then report the result here    
         String response = match ? "Your card is in the magic hand!": "Sorry, but your card is not in the magic hand :(";
         System.out.println(response);
-    }
-    
+        
+        System.out.print("\n");
+        if (match) {
+            System.out.println("Congratulations - you win!");
+        } else {
+            System.out.println("Sorry, but you Lose :(");
+        }
+    } 
 }
