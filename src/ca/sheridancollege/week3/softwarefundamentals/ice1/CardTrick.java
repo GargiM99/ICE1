@@ -52,17 +52,17 @@ public class CardTrick {
         Card guess = new Card(value, Card.SUITS[suit - 1]);
         
         //and search magicHand here
-        boolean match = false;
+        boolean answer = false;
+        Card luckyCard = new Card(11, "Spades");
             for (Card card: magicHand) {
-                if (card.getValue() == guess.getValue()
-                    && card.getSuit().equals(guess.getSuit())) {
-                   match = true;
+                if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+                   answer = true;
                    break;
             }
         }
          
         //Then report the result here    
-        String response = match ? "Your card is in the magic hand!": "Sorry, but your card is not in the magic hand :(";
+        String response = answer ? "Your card is in the magic hand!": "Sorry, but your card is not in the magic hand :(";
         System.out.println(response);
     }
     
