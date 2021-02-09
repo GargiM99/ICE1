@@ -35,36 +35,34 @@ public class CardTrick {
         }
         
         //print them out for debugging purposes 
-        System.out.println("Here are the cards in the hand: ");
+        System.out.println("Here are 7 cards in my hand: ");
         for (Card card: magicHand) {
             System.out.printf("%d of %s\n", card.getValue(), card.getSuit());
         }
         
         //now ask user for Card value and suit, create their card
-        System.out.print("Enter a value (1 - 13): ");
+        System.out.print("Pick a card, any card (1 - 13): ");
         int value = input.nextInt();
         System.out.print("Pick a suit for your card: ");
+        int suit = input.nextInt();
         for (int i = 0; i < Card.SUITS.length; i++) {
             System.out.println((i + 1) + ": " + Card.SUITS[i]);
         }
-        
-        int suit = input.nextInt();
 
-        Card userGuess = new Card(value, Card.SUITS[suit - 1]);
+        Card guess = new Card(value, Card.SUITS[suit - 1]);
         
         //and search magicHand here
         boolean match = false;
             for (Card card: magicHand) {
-                if (card.getValue() == userGuess.getValue()
-                    && card.getSuit().equals(userGuess.getSuit())) {
+                if (card.getValue() == guess.getValue()
+                    && card.getSuit().equals(guess.getSuit())) {
                    match = true;
                    break;
             }
         }
-            
-        String response = match ? "Right guess": "No match";
-        
-        //Then report the result here
+         
+        //Then report the result here    
+        String response = match ? "Your card is in the magic hand!": "Sorry, but your card is not in the magic hand :(";
         System.out.println(response);
     }
     
