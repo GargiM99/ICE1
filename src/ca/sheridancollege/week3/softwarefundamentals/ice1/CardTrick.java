@@ -66,7 +66,7 @@ public class CardTrick {
         System.out.println(response);
         
         System.out.print("\n");
-        if (match) {
+        if (answer) {
             System.out.println("Congratulations - you win!");
         } else {
             System.out.println("Sorry, but you Lose :(");
